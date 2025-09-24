@@ -1,0 +1,538 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', serif;
+    background: linear-gradient(135deg, #1a3a8b 0%, #2c5aa0 50%, #1a3a8b 100%);
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    color: #333;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="bank" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23bank)"/></svg>');
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Header Pemerintah */
+.government-header {
+    background: linear-gradient(135deg, #e31837 0%, #b30000 100%);
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 5px solid #f9a825;
+}
+
+.coat-of-arms {
+    text-align: center;
+}
+
+.garuda {
+    font-size: 3em;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+}
+
+.government-info {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.government-info h1 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.government-info h2 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 3px;
+}
+
+.government-info h3 {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.bi-logo {
+    text-align: center;
+}
+
+.bi-symbol {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+}
+
+.bi-logo span {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Container Surat Perjanjian */
+.agreement-container {
+    padding: 30px;
+}
+
+.agreement-header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.seal {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.seal-inner {
+    width: 80px;
+    height: 80px;
+    border: 3px solid #b30000;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: #b30000;
+    background: white;
+}
+
+.agreement-header h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #b30000;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.agreement-header h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.document-number {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+}
+
+/* Isi Surat */
+.agreement-content {
+    line-height: 1.8;
+}
+
+.preamble {
+    margin-bottom: 20px;
+}
+
+.statement-title {
+    font-size: 16px;
+    color: #b30000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.agreement-text {
+    margin-bottom: 30px;
+}
+
+.agreement-text p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.closing {
+    text-align: center;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Info Penerima */
+.recipient-info {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px 0;
+    border-left: 4px solid #b30000;
+}
+
+.info-section h4, .fee-section h4 {
+    color: #b30000;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px dashed #ddd;
+}
+
+.fee-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+}
+
+.fee-section small {
+    color: #666;
+    font-size: 11px;
+}
+
+/* Instruksi Pembayaran */
+.payment-instruction {
+    background: #fff3cd;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px 0;
+    border: 1px solid #ffeaa7;
+}
+
+.payment-instruction h4 {
+    color: #856404;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.bank-details {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.bank-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.amount-highlight {
+    color: #b30000;
+    font-size: 16px;
+}
+
+.payment-note {
+    background: #d4edda;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    border: 1px solid #c3e6cb;
+}
+
+.payment-note p {
+    margin: 0;
+    font-size: 12px;
+    color: #155724;
+}
+
+/* Tanda Tangan */
+.signature-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin: 40px 0;
+    padding-top: 20px;
+    border-top: 2px solid #ddd;
+}
+
+.signature-box, .president-signature {
+    text-align: center;
+}
+
+.signature-placeholder {
+    height: 80px;
+    border-bottom: 2px solid #333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 5px;
+}
+
+.official-seal {
+    margin-bottom: 20px;
+}
+
+.seal-stamp {
+    width: 120px;
+    height: 120px;
+    border: 3px solid #b30000;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    background: white;
+    font-size: 12px;
+    font-weight: bold;
+    color: #b30000;
+}
+
+.signatory-info {
+    margin-top: 10px;
+}
+
+.signatory-info strong {
+    display: block;
+    font-size: 14px;
+}
+
+.signatory-info span {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Footer */
+.agreement-footer {
+    background: #1a3a8b;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.footer-notice h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #f9a825;
+}
+
+.footer-notice p {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+.validation-info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    font-size: 12px;
+}
+
+.validation-item {
+    text-align: center;
+}
+
+/* Tombol Aksi */
+.action-buttons {
+    padding: 20px;
+    background: #f8f9fa;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    border-top: 1px solid #ddd;
+}
+
+.btn-print, .btn-agree {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-print {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-agree {
+    background: #28a745;
+    color: white;
+}
+
+.btn-print:hover {
+    background: #545b62;
+}
+
+.btn-agree:hover {
+    background: #218838;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    background: #b30000;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.close-modal {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.bank-recap {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 15px 0;
+}
+
+.bank-recap-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.warning-text {
+    background: #fff3cd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+    font-size: 12px;
+    color: #856404;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    border-radius: 0 0 10px 10px;
+}
+
+.btn-cancel, .btn-confirm {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-cancel {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-confirm {
+    background: #b30000;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 10px;
+    }
+    
+    .government-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .signature-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .validation-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media print {
+    .action-buttons {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        padding: 0;
+    }
+    
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+}
